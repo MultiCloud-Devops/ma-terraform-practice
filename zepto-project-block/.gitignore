@@ -1,0 +1,65 @@
+# ---------------------
+# Node.js & React dependencies
+# ---------------------
+zepto-frontend/node_modules/
+zepto-backend/node_modules/
+
+# ---------------------
+# Build output
+# ---------------------
+zepto-frontend/build/
+zepto-backend/build/
+zepto-backend/dist/
+
+# ---------------------
+# Environment files (keep secrets out of Git)
+# ---------------------
+zepto-frontend/.env
+zepto-frontend/.env.local
+zepto-frontend/.env.development.local
+zepto-frontend/.env.test.local
+zepto-frontend/.env.production.local
+
+zepto-backend/.env
+zepto-backend/.env.local
+
+# ---------------------
+# Logs
+# ---------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---------------------
+# OS & Editor Files
+# ---------------------
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ---------------------
+# Cache
+# ---------------------
+.cache/
+
+# ---------------------
+# Optional DevOps-related ignores (if applicable)
+# ---------------------
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# AWS credentials (if used locally)
+.aws/

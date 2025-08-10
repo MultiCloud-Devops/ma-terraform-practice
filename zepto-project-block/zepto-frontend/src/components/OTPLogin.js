@@ -10,11 +10,21 @@ const OTPLogin = ({ onLogin }) => {
     await api.post('/auth/request-otp', { mobile });
     setStep(2);
   };
-
   const verifyOtp = async () => {
-    const res = await api.post('/auth/verify-otp', { mobile, otp });
-    localStorage.setItem('token', res.data.token);
-    onLogin();
+    try {
+      const res = await api.post('/auth/verify-otp', { mobile, otp });
+      console.log('API response:', res);
+      if (res.data && res.data.token) {
+        localStorage.setItem('token', res.data.token);
+        onLogin();
+      } else {
+        console.error('Unexpected response:', res.data);
+        alert('Invalid response from server');
+      }
+    } catch (error) {
+      console.error('Verification failed:', error.response ? error.response.data : error.message);
+      alert('OTP verification failed. Please try again.');
+    }
   };
 
   return (
